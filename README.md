@@ -1,1 +1,1 @@
-https://github.com/YanaFicus/zakrivayuschiy-teg-ad
+https://yanaficus.github.io/zakrivayuschiy-teg-ad/

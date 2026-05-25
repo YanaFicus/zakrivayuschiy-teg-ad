@@ -167,18 +167,6 @@
   line-height: 0.9;
   mix-blend-mode: difference;
 }
-.save-button__icon:hover::before {
-  transform: translateX(0);
-}
-
-.save-button__icon::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-color: #000;
-    transition: transform 0.5s ease-in-out;
-    transform: translateX(-100%);
-}
 
 /* =========================
    LIKE BUTTON
@@ -234,55 +222,11 @@
   min-block-size: 55px;
 }
 
-/* Контейнер иконки */
-.save-button__icon {
+.floppy {
   position: relative;
   z-index: 1;
-  inline-size: 21px;
-  block-size: 21px;
-  color: #fff; /* Базовый цвет — белый */
-  flex-shrink: 0;
-}
-
-/* Применяем blend-mode и fill непосредственно к SVG */
-.save-button__icon svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  fill: currentColor;
-  mix-blend-mode: difference; /* Инверсия цвета при наложении */
-}
-
-/* Гарантируем, что use и path наследуют currentColor */
-.save-button__icon use,
-.save-button__icon path {
-  fill: currentColor !important;
-}
-
-/* Для иконки в модальном окне (чёрный цвет, без blend-mode) */
-.dialog__icon {
-  flex-shrink: 0;
-  inline-size: 39px;
-  block-size: 39px;
-  color: #000;
-}
-
-.dialog__icon svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  fill: currentColor;
-}
-
-.dialog__icon use,
-.dialog__icon path {
-  fill: currentColor !important;
-}
-
-/* Если иконка используется внутри save-button, переопределяем размер */
-.save-button .dialog__icon {
-  inline-size: 21px;
-  block-size: 21px;
+  color: var(--button-text-color, #fff);
+  mix-blend-mode: difference;
 }
 
 /* =========================
@@ -292,11 +236,6 @@
   border: none;
   padding: 0;
   background: transparent;
-}
-.dialog__icon svg,
-.dialog__icon use,
-.dialog__icon path {
-  fill: currentColor !important;
 }
 
 .dialog[open] {
@@ -324,18 +263,6 @@
   gap: 20px;
   width: 100%;
   margin-bottom: 30px;
-}
-
-.dialog__icon {
-  flex-shrink: 0;
-  inline-size: 39px;
-  block-size: 39px;
-  color: #000;
-}
-
-.save-button .dialog__icon {
-  inline-size: 21px;
-  block-size: 21px;
 }
 
 .dialog__text {
@@ -408,11 +335,6 @@
     flex-direction: column;
     inline-size: 306px;
     min-block-size: 84px;
-  }
-
-  .save-button__icon {
-    inline-size: 28px;
-    block-size: 28px;
   }
 
   .dialog[open] {
